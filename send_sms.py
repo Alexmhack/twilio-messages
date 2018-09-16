@@ -17,7 +17,7 @@ base_url = "https://api.twilio.com/2010-04-01/Accounts"
 
 auth_cred = (account_sid, account_token)
 
-twillio_url = base_url + '/' + account_sid + 'Messages'
+twillio_url = base_url + '/' + account_sid + '/Messages'
 
 post_data = {
 	'From': twillio_number
