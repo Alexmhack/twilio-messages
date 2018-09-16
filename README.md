@@ -1,2 +1,2 @@
-# api_requests
-fetching and manipulating data from api using python 
+# twillio-messages
+tinkering with [Twillio](http://twillio.com) services using python
