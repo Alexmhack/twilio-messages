@@ -20,7 +20,9 @@ auth_cred = (account_sid, account_token)
 twillio_url = base_url + '/' + account_sid + '/Messages'
 
 post_data = {
-	'From': twillio_number
+	'From': twillio_number,
+	'To': to_number,
+	'Body': 'This is a twillio message'
 }
 
 res = requests.get(twillio_url, data=post_data, auth=auth_cred)
