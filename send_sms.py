@@ -9,6 +9,7 @@ account_sid = os.getenv("TWILLIO_SID")
 account_token = os.getenv("TWILLIO_TOKEN")
 
 twillio_number = os.getenv("TWILLIO_NUMBER")
+to_number = os.getenv("TO_NUMBER")
 
 message_body = "This is a twillio message."
 
