@@ -14,9 +14,15 @@ message_body = "This is a twillio message."
 
 base_url = "https://api.twilio.com/2010-04-01/Accounts"
 
-auth = (account_sid, account_token)
+auth_cred = (account_sid, account_token)
 
-res = requests.get(base_url, auth=auth)
+twillio_url = base_url + '/' + account_sid + 'Messages'
+
+post_data = {
+	'From': twillio_number
+}
+
+res = requests.get(twillio_url, data=post_data, auth=auth_cred)
 
 print(res.status_code)
 print(res.text)
