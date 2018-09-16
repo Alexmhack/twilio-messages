@@ -25,7 +25,7 @@ post_data = {
 	'Body': 'This is a twillio message'
 }
 
-res = requests.get(twillio_url, data=post_data, auth=auth_cred)
+res = requests.post(twillio_url, data=post_data, auth=auth_cred)
 
 print(res.status_code)
 print(res.text)
