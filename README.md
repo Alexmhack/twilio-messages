@@ -1,7 +1,7 @@
-# Twillio-Messages
-tinkering with [Twillio](http://twillio.com) services using python
+# Twilio-Messages
+tinkering with [twilio](http://twilio.com) services using python
 
-Go to [Twillio](https://www.twilio.com/login) and create a new account or simply login if you already have an 
+Go to [Twilio](https://www.twilio.com/login) and create a new account or simply login if you already have an 
 account. Create project by selecting products like Programmable Chat or any other that 
 you want.
 
