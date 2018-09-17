@@ -81,4 +81,50 @@ base_url = "https://api.twilio.com/2010-04-01/Accounts"
 
 ```message_body``` can have any string message that you wish.
 
+If you look at the Twilio Docs for sending sms and mms messages. Twilio API requires us to 
+send a few values and there are many more values that are optional.
 
+**send_sms.py**
+```
+...
+base_url = "https://api.twilio.com/2010-04-01/Accounts"
+
+auth_cred = (account_sid, account_token)
+
+twillio_url = base_url + '/' + account_sid + '/Messages'
+
+post_data = {
+	'From': twillio_number,
+	'To': to_number,
+	'Body': 'This is a twillio message'
+}
+
+res = requests.post(twillio_url, data=post_data, auth=auth_cred)
+
+print(res.status_code)
+print(res.text)
+```
+
+**Requests** python module has very powerful features like the ```auth``` and ```data``` 
+arguments. Twilio requires Twilio Account SID and Twilio Account Token both so we pass in the
+tuple of both. Since we are making a ```post``` request we need to send some data along with 
+request. 
+
+We send a **dictionary** with **key value** pairs of data that twilio needs. We send the 
+```From``` keyword, ```To``` and ```Body``` with the respective data.
+
+If you print the ```status_code``` of the request you will get ```200``` if the credentials
+and data was correct. On printing the ```text``` of the response we get ```xml``` data with
+some information of our message and request.
+
+**NOTE:** Before sending the message to a phone number you have to verify that phone number
+in twilio. If you send the message to that phone number with which you registered in twilio 
+then the message will be sent. Twilio won't send messages to a non-verified phone number.
+
+You will get a error message in ```res.text``` if error occurs.
+
+Alternatively you can use the [twilio](https://www.twilio.com/docs/libraries/python) python
+helper library and also use the docs to see how the package works.
+
+Using twilio python library is lot more easier than using requests but we wanted to learn
+the advanced features of python requests.
