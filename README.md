@@ -128,3 +128,5 @@ helper library and also use the docs to see how the package works.
 
 Using twilio python library is lot more easier than using requests but we wanted to learn
 the advanced features of python requests.
+
+Check the ```twilio_sms.py``` file for sending sms using twilio library.
