@@ -14,9 +14,9 @@ Now let's start requesting using python
 Create a ```.env``` file in the project folder. Fill the file with your credentials like
 
 ```
-TWILLIO_NUMBER=<your-number>
-TWILLIO_SID=<your-account-sid>
-TWILLIO_TOKEN=<your-account-token>
+TWILIO_NUMBER=<your-number>
+TWILIO_SID=<your-account-sid>
+TWILIO_TOKEN=<your-account-token>
 ```
 
 Then if you don't have [dotenv](https://pypi.org/project/python-dotenv/). There are many 
@@ -72,9 +72,9 @@ from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
 
-twillio_number = os.getenv("TWILLIO_NUMBER")
+twilio_number = os.getenv("TWILIO_NUMBER")
 
-message_body = "This is a twillio message."
+message_body = "This is a twilio message."
 
 base_url = "https://api.twilio.com/2010-04-01/Accounts"
 ```
@@ -91,15 +91,15 @@ base_url = "https://api.twilio.com/2010-04-01/Accounts"
 
 auth_cred = (account_sid, account_token)
 
-twillio_url = base_url + '/' + account_sid + '/Messages'
+twilio_url = base_url + '/' + account_sid + '/Messages'
 
 post_data = {
-	'From': twillio_number,
+	'From': twilio_number,
 	'To': to_number,
-	'Body': 'This is a twillio message'
+	'Body': 'This is a twilio message'
 }
 
-res = requests.post(twillio_url, data=post_data, auth=auth_cred)
+res = requests.post(twilio_url, data=post_data, auth=auth_cred)
 
 print(res.status_code)
 print(res.text)
